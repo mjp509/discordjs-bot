@@ -1,6 +1,7 @@
 // ######### Load Modules Start #########
 const fs = require("fs");
 const express = require("express");
+const mongoose = require("mongoose");
 const app = express();
 const dotenv = require("dotenv");
 const favicon = require("serve-favicon");
