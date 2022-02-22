@@ -13,7 +13,9 @@ app.get("/", (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port);
+app.listen(port, () => {
+	console.log(`App listening on port ${port}`);
+});
 
 // ######### Express End #########
 
