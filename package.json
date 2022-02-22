@@ -1,7 +1,7 @@
 {
 	"name": "discordjs-bot",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Discord bot for group coordination of the MMORPG Lost Ark.",
 	"main": "app.js",
 	"scripts": {
 		"start": "node app.js",
@@ -11,7 +11,7 @@
 		"type": "git",
 		"url": "git+https://github.com/mjp509/discordjs-bot.git"
 	},
-	"author": "",
+	"author": "Mitchell Petras",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/mjp509/discordjs-bot/issues"
@@ -26,6 +26,7 @@
 		"dotenv": "^16.0.0",
 		"express": "^4.17.3",
 		"fs": "^0.0.1-security",
+		"mongoose": "^6.2.3",
 		"nodemon": "^2.0.15"
 	}
 }

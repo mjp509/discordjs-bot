@@ -1,12 +1,24 @@
+// ######### Load Modules Start #########
 const fs = require("fs");
-
+const express = require("express");
+const app = express();
 const dotenv = require("dotenv");
 const initCommands = require("./deployCommands");
-
 dotenv.config();
+// ######### Load Modules End #########
 
+// ######### Express Start #########
+app.get("/", (req, res) => {
+	res.send("Lost Ark Discord Bot");
+});
+
+const port = process.env.PORT || 3000;
+app.listen(port);
+
+// ######### Express End #########
+
+// ######### Commands Start #########
 const { Client, Collection, Intents } = require("discord.js");
-
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 client.commands = new Collection();
@@ -32,6 +44,9 @@ initCommands
 		console.error(error);
 	});
 
+// ######### Commands End #########
+
+// ######### Command Loop Start #########
 client.on("interactionCreate", async (interaction) => {
 	if (!interaction.isCommand()) return;
 
@@ -50,5 +65,6 @@ client.on("interactionCreate", async (interaction) => {
 		});
 	}
 });
+// ######### Command Loop Stop #########
 
 client.login(process.env.TOKEN);
