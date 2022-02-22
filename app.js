@@ -28,6 +28,7 @@ app.use(express.json());
 
 // --- static folder(s) ---
 app.use(express.static(path.join(__dirname, "public")));
+
 // ######### Express End #########
 
 // ######### Commands Start #########
