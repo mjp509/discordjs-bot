@@ -3,7 +3,7 @@ const fs = require("fs");
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
-const initCommands = require("./deployCommands");
+const initCommands = require("./commands/deployCommands");
 dotenv.config();
 // ######### Load Modules End #########
 
