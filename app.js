@@ -3,7 +3,9 @@ const fs = require("fs");
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
-const initCommands = require("./commands/deployCommands");
+const favicon = require("serve-favicon");
+const path = require("path");
+const initCommands = require("./deployCommands");
 dotenv.config();
 // ######### Load Modules End #########
 
@@ -16,6 +18,16 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
 	console.log(`App listening on port ${port}...`);
 });
+
+// --- favicon ---
+app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
+
+// --- express body parser ---
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// --- static folder(s) ---
+app.use(express.static(path.join(__dirname, "public")));
 // ######### Express End #########
 
 // ######### Commands Start #########
