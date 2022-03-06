@@ -19,7 +19,7 @@ const MemberSchema = new Schema({
 		required: true,
 	},
 	gear_score: {
-		type: Number,
+		type: Number, //test push
 		required: true,
 	},
 	guild_status: {
